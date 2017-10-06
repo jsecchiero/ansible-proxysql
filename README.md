@@ -61,8 +61,10 @@ _Use a fixed tag instead of origin/master if possible_
 proxysql_mysql_query_rules:
   - match_pattern: "^SELECT .* FOR UPDATE$"
     destination_hostgroup: 0
+    cache_ttl: 1000
   - match_pattern: "^SELECT"
     destination_hostgroup: 1
+    cache_ttl: 1000
 
 proxysql_mysql_servers:
    - address: 1.2.3.4
